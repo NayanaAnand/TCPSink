@@ -328,6 +328,7 @@ int sinksocket_i::serviceFunctionT(T* inputPort)
 {
 	LOG_TRACE(sinksocket_i, __PRETTY_FUNCTION__);
 	typename T::dataTransfer *packet = inputPort->getPacket(0.0);
+        LOG_INFO(sinksocket_i, "Data Received" << packet);
 
 	if (not packet) {
 		return NOOP;
